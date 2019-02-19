@@ -1,0 +1,332 @@
+@font-face {
+  font-family: "Exo2.0";
+  src: url("fonts/Exo2.0-Thin.otf");
+}
+
+html,body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+* {
+    box-sizing:border-box;
+}
+
+main {
+    overflow: auto;
+    min-width: 320px;
+    height: 100vh;
+    background-image: linear-gradient(0deg,rgba(0,0,0,.5) 0,transparent 50%,rgba(0,0,0,.5)),url(img/background.jpg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.b-container {
+    width: 1120px;
+    margin:0 auto;
+}
+
+.b-food__title {
+    color: #ffffff;
+    font-family: "Exo2.0";
+    font-size: 36px;
+    margin:0;
+    text-align: center;
+    font-weight: 400;
+    padding-bottom: 23px;
+}
+
+.b-product-wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.b-product {
+    display: block;
+    width: 320px;
+    height: 480px;
+    padding: 17px 43px;
+    position:relative;
+    cursor: pointer;
+    background-image: url(img/cat.png),linear-gradient(135deg,transparent 5%,#f2f2f2 0);
+    background-repeat: no-repeat;
+    background-position: 100% 100%;
+    border-radius: 0 10px 10px 10px;
+}
+
+.product__card {
+    position: relative;
+}
+
+
+.product__card:before{
+    position:absolute;
+    z-index: 0;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    content:'';
+    transform:scale(1.02,1.015);
+    background-image:linear-gradient(135deg,transparent 5%,#1698d9 0);
+    border-radius:0 10px 10px 10px
+}
+
+.b-product__input {
+    display: none;
+}
+
+.b-product__text {
+    color: #666666;
+    font-family: "Trebuchet MS";
+    font-size: 16px;
+    font-weight: 400;
+    margin:0;
+    margin-bottom: 5px;
+}
+
+.b-product__title {
+    color: #000000;
+    font-family: "Trebuchet MS";
+    font-size: 48px;
+    font-weight: 700;
+    margin:0;
+}
+
+.b-product__title--size {
+    font-size: 24px;
+    display:block;
+    margin-bottom: 13px;
+    padding-left: 2px;
+    margin-top: -1px;
+}
+
+.b-product__text--size {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16px;
+    display:block;
+    width: 130px;
+    padding-left: 3px;
+}
+
+.b-weight-wrap {
+    width: 81px;
+    height: 81px;
+    background-color: #1698d9;
+    position: absolute;
+    border-radius:50%;
+    right: 11px;
+    bottom: 11px;
+    padding-top: 20px;
+    text-align:center;
+    color: #ffffff;
+    font-family: "Trebuchet MS";
+    font-weight: 400;
+    line-height: 22px;
+}
+
+.b-weight-wrap__number {
+    font-size: 42px;
+}
+.b-product__amount {
+    font-size: 21px;
+    display:block;
+}
+
+.b-product__text--sel-hover {
+    color: #e52e7a;
+    display: none;
+}
+
+
+
+
+.b-purchase {
+    color: #ffffff;
+    font-family: "Trebuchet MS";
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 16px;
+    text-align: center;
+    margin: 0;
+    padding-top: 14px;
+}
+.b-purchase--color {
+    color: #1698d9;
+    font-weight: 700;
+    border-bottom:1px dashed #1698d9;
+    display: inline-block;
+    width: 29px;
+    cursor: pointer;
+}
+.b-purchase--disabled {
+    color:#ffff66;
+    display: none;
+}
+.b-purchase--selected {
+    display:none;
+}
+
+.b-product__input:checked~.b-purchase--selected {
+    display:block;
+}
+
+.b-product__input:checked~.b-purchase--default {
+    display:none;
+}
+
+
+/*selected:start*/
+.product-selected .b-weight-wrap  {
+    background-color: #d91667;
+}
+
+.product-selected .product__card:before {
+    background-image: linear-gradient(135deg,transparent 5%,#d91667 0);
+}
+
+.product-selected .b-purchase--default {
+    display: none;
+}
+
+.product-selected .b-purchase--selected {
+    display: block;
+}
+/*selected:end*/
+
+/*selected-hover:start*/
+.product-selected-hover .b-weight-wrap {
+    background: #e62e7a;
+}
+
+.product-selected-hover .product__card:before {
+    background-image: linear-gradient(135deg,transparent 5%,#e62e7a 0);
+}
+
+.product-selected-hover .b-product__text--selected {
+    display:none;
+}
+
+.product-selected-hover .b-product__text--sel-hover {
+    display: block;
+}
+
+/*selected-hover:end*/
+
+
+/*disabled*/
+.product-dis .b-product {
+    background-image: linear-gradient(135deg,transparent 5%,hsla(0,0%,95%,.5) 0),url(img/cat.png),linear-gradient(135deg,transparent 5%,#f2f2f2 0);
+    cursor: initial;
+}
+
+.product-dis .b-product__text {
+    color: #b3b3b3;
+}
+.product-dis .b-product__title {
+    color: #b3b3b3;
+}
+
+.product-dis .product__card:before {
+    background-image: linear-gradient(135deg,transparent 5%,#b3b3b3 0);
+}
+
+.product-dis .b-weight-wrap {
+    background-color: #b3b3b3;
+}
+
+.product-dis .b-purchase--default {
+    display: none;
+}
+
+.product-dis .b-purchase--disabled {
+    display: block;
+}
+
+.product-dis .b-product__input:checked~.b-purchase--selected {
+    display: none;
+}
+/*disabled:end*/
+
+@media (max-width: 1169px) {
+
+.b-container {
+    width:auto;
+    padding: 0 25px;
+    }
+}
+
+
+@media (max-width: 1024px) {
+
+.b-container {
+    width: 100%;
+    padding: 0 20px;
+}
+
+.b-food {
+    padding-top: 10px;
+}
+
+.b-food__title {
+    padding-bottom: 17px;
+}
+
+.b-product-wrapper {
+    justify-content: space-around;
+}
+
+.b-product {
+    width:auto;
+    height: 400px;
+}
+
+.b-product__text {
+    font-size: 14px;
+}
+
+.b-product__title {
+    font-size: 30px;
+}
+
+}
+
+
+@media (max-width: 767px) {
+
+main {
+    display: block;
+}
+
+.b-container {
+    padding: 0 15px;
+    width: 100%;
+}
+
+
+
+
+
+.b-product-wrapper {
+    flex-direction: column;
+    align-items: center;
+}
+
+.b-product {
+    width: 100%;
+    height: 400px;
+    clip-path:none;
+}
+
+.b-product__title {
+    font-size: 38px;
+}
+
+.b-food {
+    padding-bottom: 10px;
+}
+
+}

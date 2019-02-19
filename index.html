@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Prototype</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+    <section class="b-food">
+        <div class="b-container">
+            <h1 class="b-food__title">Ты сегодня покормил кота?</h1>
+            <div class="b-product-wrapper">
+
+                <div class="product">
+                    <input type="checkbox" id="item1" class="b-product__input">
+                    <div class="product__card">
+                        <label for="item1" class="b-product">
+                            <div class="b-product__text b-product__text--sel-hover">Котэ не одобряет?</div>
+                            <div class="b-product__text b-product__text--selected">Сказочное заморское явство</div>
+                            <div class="b-product__title">Нямушка</div>
+                            <div class="b-product__title b-product__title--size">с фуа-гра</div>
+                            <span class="b-product__text b-product__text--size">10 порций<br> мышь в подарок</span>
+                            <span class="b-weight-wrap">
+                                <span class="b-weight-wrap__number">0,5</span>
+                                <span class="b-product__amount">кг</span>
+                            </span>
+                        </label>
+                    </div>
+                    <p class="b-purchase b-purchase--default">Чего сидишь? Порадуй котэ,&#32;<label for="item1" class="b-purchase--color">купи.</label></p>
+                    <p class="b-purchase b-purchase--selected">Печень утки разварная с артишоками.</p>
+                    <p class="b-purchase b-purchase--disabled">Печалька, с фуа-гра закончился.</p>
+                </div>
+
+<!--product-selected-->
+
+                <div class="product">
+                    <input type="checkbox" id="item2" class="b-product__input">
+                    <div class="product__card">
+                        <label for="item2" class="b-product">
+                            <p class="b-product__text b-product__text--sel-hover">Котэ не одобряет?</p>
+                            <p class="b-product__text b-product__text--selected">Сказочное заморское яство</p>
+                            <h2 class="b-product__title">Нямушка</h2>
+                            <span class="b-product__title b-product__title--size">с рыбой</span>
+                            <span class="b-product__text b-product__text--size">40 порций<br> 2 мыши в подарок</span>
+                            <span class="b-weight-wrap">
+                                <span class="b-weight-wrap__number">2</span>
+                                <span class="b-product__amount">кг</span>
+                            </span>
+                        </label>
+                    </div>
+                    <p class="b-purchase b-purchase--default">Чего сидишь? Порадуй котэ,&#32;<label for="item2" class="b-purchase--color">купи.</label></p>
+                    <p class="b-purchase b-purchase--selected">Головы щучьи с чесноком да свежайшая сёмгушка.</p>
+                    <p class="b-purchase b-purchase--disabled">Печалька, с рыбой закончился.</p>
+                </div>
+
+<!--product-dis-->
+                <div class="product product-dis">
+                    <input type="checkbox" id="item3" class="b-product__input">
+                    <div class="product__card">
+                        <label for="item3" class="b-product">
+                            <p class="b-product__text b-product__text--sel-hover">Котэ не одобряет?</p>
+                            <p class="b-product__text b-product__text--selected">Сказочное заморское яство</p>
+                            <h2 class="b-product__title">Нямушка</h2>
+                            <span class="b-product__title b-product__title--size">с курой</span>
+                            <span class="b-product__text b-product__text--size">100 порций<br> 5 мышей в подарок заказчик доволен</span>
+                            <span class="b-weight-wrap">
+                                <span class="b-weight-wrap__number">5</span>
+                                <span class="b-product__amount">кг</span>
+                            </span>
+                        </label>
+                    </div>
+                    <p class="b-purchase b-purchase--default">Чего сидишь? Порадуй котэ,&#32;<label for="item3" class="b-purchase--color">купи.</label></p>
+                    <p class="b-purchase b-purchase--selected">Филе из цыплят с трюфелями в бульоне.</p>
+                    <p class="b-purchase b-purchase--disabled">Печалька, с курой закончился.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+</main>
+<script src="main.js"></script>
+</body>
+</html>
